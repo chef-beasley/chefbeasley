@@ -1,23 +1,28 @@
 <html>
-    <span id="headerback"><img src="https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG" align = "middle"id="logo">
-</span>
+    <div id="headerback">
+      <img src="https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG" align = "middle"id="logo">
+</div>
 
 <style>
   #headerback{
-    display:block;
-        width:auto;
-    margin-top:0px;
+    display:absolute;
+    margin-top:-10px;
+    margin-left:-10px;
     height:150px;
-    background-color: lightGrey
+    width:0px;
+    background-color: lightGrey;
   }
   #logo{
-
-    margin:10px auto 10px;
-        display:block;
+    margin-top:15px;
   height: 80%;
   }
   body {
   background-color: lightblue;
 }
 </style>
+  <script>
+    document.getElementById("headerback").style.width = screen.width+'px';
+    document.getElementById("logo").style.marginLeft = ((screen.width/2)-(document.getElementById("logo").naturalWidth/4))+'px';
+
+  </script>
 </html>
