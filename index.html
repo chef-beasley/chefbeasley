@@ -17,19 +17,23 @@
       display:flex;
     }
     #Breakfast{
+      text-align:center;
       flex:1;
     }
 
     #Lunch{
       flex:1;
+      text-align:center;
 
     }
 
     #Dinner{
+      text-align:center;
       flex:1;
     }
 
     #Dessert{
+      text-align:center;
       flex:1;
 
     }
@@ -50,6 +54,7 @@
       height:150px;
       background-color: lightGrey;
       transition: margin-top .5s;
+      width: 100%;
     }
     #logo{
       display: block;
@@ -62,7 +67,6 @@
     }
   </style>
   <script>
-    document.getElementById("headerback").style.width = "100%";
     var cs = 0;
     var ps =0;
     window.onscroll = function(){
@@ -74,7 +78,7 @@
       }
       ps=cs;
     }
-    document.getElementById("headerback").style.width = screen.width+'px';
+    
     // document.getElementById("logo").style.marginLeft = ((screen.width/2)-(document.getElementById("logo").naturalWidth/3))+'px';
 
   </script>
