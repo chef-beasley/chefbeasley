@@ -1,40 +1,37 @@
 <html>
   <div id="headerback">
-    <a id="Breakfast">Breakfast</a>
-    <a id="Lunch">Lunch</a>
+    <!--     https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG -->
     <img src="https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG" align = "middle"id="logo">
-    <a id="Dinner">Dinner</a>
-    <a id="Dessert">Dessert</a>
+
+    <div id="tabs">
+      <a id="Breakfast">Breakfast</a>
+      <a id="Lunch">Lunch</a>
+      <a id="Dinner">Dinner</a>
+      <a id="Dessert">Dessert</a>
+    </div>
   </div>
-  <p id="photosheader">Yep Food Photos</p>
+  <p id="photosheader">Food Photos</p>
   <img id="imgg"src="https://bento.cdn.pbs.org/hostedbento-prod/filer_public/Big%20Pacific/Photos/BigPacific_Promo_Thumb.jpg">
   <style>
+    #tabs{
+      display:flex;
+    }
     #Breakfast{
-      margin-top:70px;
-      margin-left:200px;
-      position:absolute;
-      text-align:center;
+      flex:1;
     }
-    
+
     #Lunch{
-      margin-top:70px;
-      margin-left:400px;
-      position:absolute;
-      text-align:center;
+      flex:1;
+
     }
-    
+
     #Dinner{
-      margin-top:70px;
-      margin-left:100px;
-      position:absolute;
-      text-align:center;
+      flex:1;
     }
-    
+
     #Dessert{
-      margin-top:70px;
-      margin-left:300px;
-      position:absolute;
-      text-align:center;
+      flex:1;
+
     }
     #imgg{
       display:absolute;
@@ -51,20 +48,21 @@
       margin-top:-50px;
       margin-left:-10px;
       height:150px;
-      width:0px;
       background-color: lightGrey;
-      transition: margin-top 0.3s;
+      transition: margin-top .5s;
     }
     #logo{
       display: block;
-      margin:15px auto;
       height: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
     body {
       background-color: lightblue;
     }
   </style>
   <script>
+    document.getElementById("headerback").style.width = "100%";
     var cs = 0;
     var ps =0;
     window.onscroll = function(){
@@ -80,4 +78,5 @@
     // document.getElementById("logo").style.marginLeft = ((screen.width/2)-(document.getElementById("logo").naturalWidth/3))+'px';
 
   </script>
+  
 </html>
