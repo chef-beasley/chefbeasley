@@ -1,4 +1,4 @@
-<html>
+x<html>
   <div id="headerback">
     <!--     https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG -->
     <img src="https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG" align = "middle"id="logo">
@@ -11,37 +11,71 @@
     </div>
   </div>
   <p id="photosheader">Food Photos</p>
-  <img id="imgg"src="https://bento.cdn.pbs.org/hostedbento-prod/filer_public/Big%20Pacific/Photos/BigPacific_Promo_Thumb.jpg">
+
+  <div id="photobox">
+    <img class="rimg" src="https://bento.cdn.pbs.org/hostedbento-prod/filer_public/Big%20Pacific/Photos/BigPacific_Promo_Thumb.jpg">
+  <img class="rimg" src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+  </div>
   <style>
+    #photobox{
+     position: relative;
+width:300px;
+height:300px;
+      margin-left:auto;
+      margin-right:auto;
+      border-style: solid;
+border-color:black;
+      border-width:10px;
+
+      overflow: hidden;
+    }
     #tabs{
       display:flex;
+      font-size:22px;
+          font-weight: 100;
+margin-bottom:10px;
     }
     #Breakfast{
       text-align:center;
       flex:1;
+      transition: text-shadow .2s ease-in-out;
     }
-
+#Breakfast:hover{
+text-shadow: 1px 0 0
+    }
     #Lunch{
       flex:1;
       text-align:center;
-
+      transition: text-shadow .2s ease-in-out;
     }
-
+#Lunch:hover{
+text-shadow: 1px 0 0
+    }
     #Dinner{
       text-align:center;
-      flex:1;
+      flex:1;     
+      transition: text-shadow .2s ease-in-out;
     }
-
+#Dinner:hover{
+text-shadow: 1px 0 0
+    }
     #Dessert{
       text-align:center;
       flex:1;
-
+      transition: text-shadow .2s ease-in-out;
     }
-    #imgg{
-      display:absolute;
+    #Dessert:hover{
+text-shadow: 1px 0 0
+    }
+    .rimg{
+      position:absolute;
+top: 0px;
+      width:300px;
+      height:300px;
+      transition: margin-left .4s ease;
     }
     #photosheader{
-      padding-top:150px;
+      padding-top:160px;
       font-weight:bolder;
       text-align:center;
       display:block;
@@ -49,16 +83,16 @@
     }
     #headerback{
       position:fixed;
-      margin-top:-50px;
+  margin-top:-50px;
       margin-left:-10px;
-      height:150px;
       background-color: lightGrey;
       transition: margin-top .5s;
       width: 100%;
     }
     #logo{
+      margin-top:20px;
       display: block;
-      height: 80%;
+      height: 100px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -67,12 +101,71 @@
     }
   </style>
   <script>
+    var wp = 0;
+    document.getElementsByClassName("rimg")[1].style.marginLeft = "-300px";
+    function returnimg(){
+      if (wp==0){
+        document.getElementsByClassName("rimg")[0].style.transition = "margin-left 0s ease";
+            document.getElementsByClassName("rimg")[0].style.zIndex = "-300";
+
+            document.getElementsByClassName("rimg")[0].style.marginLeft = "-300px";
+             
+
+wp=1;
+      }else{
+                document.getElementsByClassName("rimg")[1].style.transition = "margin-left 0s ease";
+                    document.getElementsByClassName("rimg")[1].style.zIndex = "-300";
+
+    document.getElementsByClassName("rimg")[1].style.marginLeft = "-300px";
+
+
+        wp=0;
+
+      }
+    }
+    var piccounter = 0;
+    var srcs = ["https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556977680910/home/Burgers.jpg","https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556977638962/home/Dumplings.jpg","https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556977627175/home/Brisket.jpg","https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556977614622/home/Mac%20and%20cheese.jpg"];
+       document.getElementsByClassName("rimg")[0].src = srcs[piccounter];
+        piccounter++;
+    function switchpic(){
+      if (wp == 0){
+        document.getElementsByClassName("rimg")[1].style.transition = "margin-left .4s ease";
+                    document.getElementsByClassName("rimg")[1].style.zIndex = "300";
+                document.getElementsByClassName("rimg")[0].style.zIndex = "1";
+
+    document.getElementsByClassName("rimg")[0].style.marginLeft = "300px";
+        if (piccounter == srcs.length){
+          piccounter = 0;
+        }
+        document.getElementsByClassName("rimg")[1].src = srcs[piccounter];
+        piccounter++;
+    document.getElementsByClassName("rimg")[1].style.marginLeft = "0px";
+                document.getElementsByClassName("rimg")[0].style.zIndex = "-1";
+
+        setTimeout(returnimg,410);
+      }else{
+               document.getElementsByClassName("rimg")[0].style.zIndex = "300";
+
+        document.getElementsByClassName("rimg")[0].style.transition = "margin-left .4s ease";        
+        document.getElementsByClassName("rimg")[1].style.zIndex = "1";
+
+          document.getElementsByClassName("rimg")[1].style.marginLeft = "300px";
+        if (piccounter == srcs.length){
+          piccounter = 0;
+        }
+                document.getElementsByClassName("rimg")[0].src = srcs[piccounter];
+        piccounter++;
+    document.getElementsByClassName("rimg")[0].style.marginLeft = "0px";
+        document.getElementsByClassName("rimg")[1].style.zIndex = "-1";
+        setTimeout(returnimg,410);
+      }
+    }
     var cs = 0;
     var ps =0;
     window.onscroll = function(){
       cs=window.pageYOffset;
       if (ps<cs){
-        document.getElementById("headerback").style.marginTop = "-200px";
+        document.getElementById("headerback").style.marginTop = "-210px";
       }else{
         document.getElementById("headerback").style.marginTop = "-50px";
       }
@@ -80,7 +173,7 @@
     }
     
     // document.getElementById("logo").style.marginLeft = ((screen.width/2)-(document.getElementById("logo").naturalWidth/3))+'px';
-
+setInterval(switchpic,3000);
   </script>
   
 </html>
