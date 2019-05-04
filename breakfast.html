@@ -1,0 +1,102 @@
+x<html>
+  <div id="headerback">
+    <!--     https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG -->
+    <img href="/index.html"src="https://sites.google.com/site/menuwebsitepictures/_/rsrc/1556402924438/home/menulogo.PNG" align = "middle"id="logo"onclick = "location.href='/index.html';">
+
+    <div id="tabs">
+      <a href="/breakfast.html"id="Breakfast" class="nocol">Breakfast</a>
+      <a href="/lunch.html"id="Lunch"class="nocol">Lunch</a>
+      <a href="/dinner.html"id="Dinner"class="nocol">Dinner</a>
+      <a href="/dessert.html"id="Dessert"class="nocol">Dessert</a>
+    </div>
+  </div>
+  <div id="contall">
+  <p id="photosheader">Breakfast Foods</p>
+
+  </div>
+  <style>
+    .nocol{
+      color:black;
+    }
+    #tabs{
+      display:flex;
+      font-size:22px;
+          font-weight: 100;
+margin-bottom:10px;
+    }
+    #Breakfast{
+      text-align:center;
+      flex:1;
+      transition: text-shadow .2s ease-in-out;
+    }
+#Breakfast:hover{
+text-shadow: 1px 0 0
+    }
+    #Lunch{
+      flex:1;
+      text-align:center;
+      transition: text-shadow .2s ease-in-out;
+    }
+#Lunch:hover{
+text-shadow: 1px 0 0
+    }
+    #Dinner{
+      text-align:center;
+      flex:1;     
+      transition: text-shadow .2s ease-in-out;
+    }
+#Dinner:hover{
+text-shadow: 1px 0 0
+    }
+    #Dessert{
+      text-align:center;
+      flex:1;
+      transition: text-shadow .2s ease-in-out;
+    }
+    #Dessert:hover{
+text-shadow: 1px 0 0
+    }
+
+    #photosheader{
+      padding-top:160px;
+      font-weight:bolder;
+      text-align:center;
+      display:block;
+      font-size:50px;
+    }
+    #headerback{
+      position:fixed;
+  margin-top:-50px;
+      margin-left:-10px;
+      background-color: lightGrey;
+      transition: margin-top .5s;
+      width: 100%;
+    }
+    #logo{
+      margin-top:20px;
+      display: block;
+      height: 100px;
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    body {
+      background-color: lightblue;
+    }
+  </style>
+  <script>
+    var cs = 0;
+    var ps =0;
+    window.onscroll = function(){
+      cs=window.pageYOffset;
+      if (ps<cs){
+        document.getElementById("headerback").style.marginTop = "-210px";
+      }else{
+        document.getElementById("headerback").style.marginTop = "-50px";
+      }
+      ps=cs;
+    }
+    
+    // document.getElementById("logo").style.marginLeft = ((screen.width/2)-(document.getElementById("logo").naturalWidth/3))+'px';
+  </script>
+  
+</html>
